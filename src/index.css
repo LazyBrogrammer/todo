@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+:root {
+  --body-bg: #fff;
+  --secondary-bg: #fff;
+  --text-color: #494c6b;
+  --secondary-color: #d1d2da;
+}
+
+.dark {
+  --body-bg: #171823;
+  --secondary-bg: #25273d;
+  --text-color: #c8cbe7;
+  --secondary-color: #4d5067;
+}
