@@ -1,10 +1,34 @@
 import styled from 'styled-components';
 import circle from '../assets/circle.svg';
-export const Input = () => {
+import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
+export const Input = ({ todos, setTodos }) => {
+  const [value, setValue] = useState('');
+  let valueObj = {
+    text: '',
+    id: uuidv4(),
+    isActive: false,
+  };
+  const saveValue = () => {
+    valueObj.text = value;
+    setTodos([...todos, valueObj]);
+    localStorage.setItem('data', JSON.stringify(todos));
+  };
+  const sendData = () => {
+    saveValue();
+    setValue('');
+  };
   return (
-    <StyledInput>
-      <img src={circle} alt="" />
-      <input type="text" placeholder="Create a new todo" />
+    <StyledInput onKeyUp={(e) => e.key === 'Enter' && sendData()}>
+      <img onClick={() => sendData()} src={circle} alt="" />
+      <input
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        type="text"
+        placeholder="Create a new todo"
+        value={value}
+      />
     </StyledInput>
   );
 };

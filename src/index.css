@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Josefin Sans', sans-serif;
-}
 :root {
   --body-bg: #fff;
   --secondary-bg: #fff;
@@ -19,4 +16,11 @@ body {
   --secondary-bg: #25273d;
   --text-color: #c8cbe7;
   --secondary-color: #4d5067;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--secondary-bg) !important;
+  width: 100vw;
+  min-height: 100vh;
 }

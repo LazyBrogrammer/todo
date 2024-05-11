@@ -6,7 +6,10 @@ export const Navbar = ({ theme, setTheme }) => {
     <StyledNavbar>
       <h2>todo</h2>
       <img
-        onClick={() => setTheme(!theme)}
+        onClick={() => {
+          setTheme(!theme);
+          localStorage.setItem('theme', !theme);
+        }}
         src={`${theme ? moonIcon : sunIcon}`}
         alt=""
       />

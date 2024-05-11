@@ -4,8 +4,7 @@ import { Navbar } from './Navbar';
 // import images
 import darkBackround from '../assets/dark-bg.jpeg';
 import lightBackground from '../assets/light-bg.jpeg';
-export const Header = ({ theme, setTheme }) => {
-  console.log(theme);
+export const Header = ({ theme, setTheme, todos, setTodos }) => {
   return (
     <StyledHeader
       style={{
@@ -14,7 +13,7 @@ export const Header = ({ theme, setTheme }) => {
       }}
     >
       <Navbar theme={theme} setTheme={setTheme} />
-      <Input theme={theme} />
+      <Input theme={theme} todos={todos} setTodos={setTodos} />
     </StyledHeader>
   );
 };
